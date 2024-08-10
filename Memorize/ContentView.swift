@@ -8,26 +8,36 @@
 import SwiftUI
 
 struct ContentView: View {
-    // body is a _computed_property_
     var body: some View {
-        // some = the type of body needs to be any struct as long as it behaves like a View - aka 'some view'
-        VStack(alignment: .center, spacing: 30) { // Embedded function
-            Image(systemName: "tortoise")
-                .foregroundColor(Color.green)
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, Marta!")
-                .foregroundColor(Color.blue)
-                .font(.largeTitle)
-            Text("Just felt like adding another line here :)")
-                .foregroundColor(Color.teal)
+        HStack{
+            CardView(isFaceUp: true)
+            CardView()
+            CardView()
+            CardView()
         }
-        .padding(40)
-        .border(/*@START_MENU_TOKEN@*/Color.black/*@END_MENU_TOKEN@*/, width: 4)
+        .foregroundColor(/*@START_MENU_TOKEN@*/.blue/*@END_MENU_TOKEN@*/)
+        .padding()
     }
 }
 
-
+struct CardView: View {
+    var isFaceUp: Bool = false
+    
+    var body: some View {
+        ZStack() {
+            if isFaceUp {
+                RoundedRectangle(cornerRadius: 12)
+                    .foregroundColor(.white)
+                RoundedRectangle(cornerRadius: 12.0)
+                    .strokeBorder(lineWidth: 2)
+                Text("🐢")
+                    .font(.largeTitle)
+            } else {
+                RoundedRectangle(cornerRadius: 12)
+            }
+        }
+    }
+}
 
 
 
