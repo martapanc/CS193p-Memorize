@@ -11,7 +11,9 @@ struct ContentView: View {
     // body is a _computed_property_
     var body: some View {
         // some = the type of body needs to be any struct as long as it behaves like a View - aka 'some view'
-        VStack(alignment: .center, spacing: 30) { // Embedded function
+        VStack(alignment: .center,
+//               spacing: 30 // defaults to 'just the right amount'
+        ) { // Embedded function
             Image(systemName: "tortoise")
                 .foregroundColor(Color.green)
                 .imageScale(.large)
@@ -23,14 +25,9 @@ struct ContentView: View {
                 .foregroundColor(Color.teal)
         }
         .padding(40)
-        .border(/*@START_MENU_TOKEN@*/Color.black/*@END_MENU_TOKEN@*/, width: 4)
+        .border(Color.orange, width: 5)
     }
 }
-
-
-
-
-
 
 #Preview {
     ContentView()
