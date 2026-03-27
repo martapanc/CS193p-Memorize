@@ -23,6 +23,7 @@ struct ContentView: View {
                 .font(.largeTitle)
             Text("Just felt like adding another line here :)")
                 .foregroundColor(Color.teal)
+            Text("And another, because why not").font(Font.footnote.bold())
         }
         .padding(40)
         .border(Color.orange, width: 5)
